@@ -2,8 +2,7 @@ name: Deployment (Container)
 on:
   push:
     branches:
-      - main
-      - dev
+      - section8
 env:
   CACHE_KEY: node-deps
   MONGODB_DB_NAME: gha-demo
@@ -41,7 +40,7 @@ jobs:
       - name: Output information
         env:
           PORT: 3000
-        run: |        
+        run: |
           echo "MONGODB_DB_NAME: $MONGODB_DB_NAME"
           echo "MONGODB_USERNAME: $MONGODB_USERNAME"
           echo "${{ env.PORT }}"
